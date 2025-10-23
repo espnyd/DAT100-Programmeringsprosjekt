@@ -10,6 +10,10 @@ public class CustomerMain {
         System.out.println("OPPGAVE 3");
         System.out.println("==============");
         System.out.println();
+        Customer c1 = new Customer("Per","Per@gmail.com",2,PowerAgreementType.SPOTPRICE);
+        System.out.println(c1);
+        c1.setName("Narve");
+        System.out.println(c1.getName());
 
         /*
         TODO

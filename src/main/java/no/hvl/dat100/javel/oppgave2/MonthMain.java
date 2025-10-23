@@ -16,7 +16,27 @@ public class MonthMain {
         System.out.println("OPPGAVE 2");
         System.out.println("==============");
         System.out.println();
-
+        System.out.println();
+        MonthlyPower.print_PowerUsage(power_usage_month);
+        System.out.println();
+        System.out.println();
+        MonthlyPower.print_PowerPrices(power_prices_month);
+        System.out.println();
+        System.out.println();
+        MonthlyPower.computePowerUsage(power_usage_month);
+        System.out.println();
+        System.out.println();
+        MonthlyPower.exceedThreshold(power_usage_month,1000);
+        System.out.println();
+        System.out.println();
+        MonthlyPower.computeSpotPrice(power_usage_month,power_prices_month);
+        System.out.println();
+        System.out.println();
+        MonthlyPower.computePowerSupport(power_usage_month,power_prices_month);
+        System.out.println();
+        System.out.println();
+        MonthlyPower.computeNorgesPrice(power_usage_month);
+        /*
         /*
         TODO
 

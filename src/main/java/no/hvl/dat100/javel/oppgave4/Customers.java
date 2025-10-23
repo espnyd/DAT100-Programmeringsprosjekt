@@ -9,7 +9,7 @@ public class Customers {
     // a) Complete constructor
     public Customers(int size) {
 
-        // TODO
+       customers = new Customer[size];
 
     }
 
@@ -19,18 +19,24 @@ public class Customers {
 
         int count = 0;
 
-        // TODO
-
+        for(Customer c : customers){
+            if(c != null){
+                count++;
+            }
+        }
         return count;
     }
 
     // c) return reference to customer with given id (if exists)
     public Customer getCustomer(int customer_id) {
 
-        boolean funnet = false;
         Customer c = null;
+        for(Customer d: customers) {
+            if(d !=null && d.getCustomer_id()==customer_id){
+                c= d;
+            }
+        }
 
-        // TODO
 
         return c;
     }
@@ -39,8 +45,13 @@ public class Customers {
     public boolean addCustomer(Customer c) {
 
         boolean inserted = false;
+        for(int i = 0;i<customers.length;i++) {
+            if(customers[i] ==null && inserted==false){
+                customers[i]=c;
+                inserted = true;
+            }
+        }
 
-        // TODO
 
         return inserted;
     }
@@ -51,18 +62,35 @@ public class Customers {
         boolean deleted = false;
         Customer c = null;
 
-        // TODO
+        for(int i = 0;i<customers.length;i++) {
+            if(customers[i] !=null && customers[i].getCustomer_id()==customer_id){
+                c= customers[i];
+                customers[i] = null;
+                deleted = true;
+            }
+        }
 
         return c;
     }
 
     // f) return reference table with all customers
     public Customer[] getCustomers() {
+        int count = 0;
+        for (Customer c : customers) {
+            if (c != null) {
+                count++;
+            }
+        }
 
-        Customer[] customers = null;
+        Customer[] result = new Customer[count];
+        int index = 0;
+        for (Customer c : customers) {
+            if (c != null) {
+                result[index] = c;
+                index++;
+            }
+        }
 
-        // TODO
-
-        return customers;
+        return result;
     }
 }
